@@ -21,7 +21,7 @@ const onSubmit = async () => {
         const {data} = await repository.login(credentials);
         if (data) {
             localStorage.setItem('access_token', data.access_token);
-            localStorage.setItem('user', data.user);
+            localStorage.setItem('user', JSON.stringify (data.user));
             router.replace({name: "about"});
         }
     } catch (e) {
@@ -34,8 +34,8 @@ const onSubmit = async () => {
 
 <template>
     <main class="grid grid-cols-12 gap-4 min-h-screen">
-        <section class="col-span-6 bg-gray-100 h-full shadow-xl">
-                <h1 class="font-bold ml-5 mt-5">Login Page</h1>
+        <section class="col-span-6 bg-blue-300 h-full shadow-xl">
+                <h1 class="text-blue-800 font-bold ml-5 mt-5">Login Page</h1>
             <form method="post" :action="route.path" class="p-40" @submit.prevent="onSubmit">
             <div class="mb-4">
                 <label for="email" class="block mb-2">Email</label>
@@ -46,7 +46,7 @@ const onSubmit = async () => {
                 <input v-model="credentials.password" type="password" required placeholder="password" class="border p-2 w-full bg-gray-100 outline-none focus:ring-4 focus:ring-blue-300 rounded" />
             </div>
             <button type="submit" 
-            class="bg-blue-600 text-white p-2 w-full block hover:bg-blue-800 rounded-lg transition-color duration-400">LOGIN
+            class="text-sm font-medium bg-blue-600 text-white py-2 px-3 block rounded-lg">LOGIN
         </button>
             </form>
             <slot />

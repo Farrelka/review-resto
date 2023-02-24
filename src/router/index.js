@@ -10,11 +10,16 @@ const router = createRouter({
       component: LoginView
     },
     {
-      path: '/restos',
-      name: 'restos',
-      component: () => import('../views/RestoView.vue')
-    }
-  ]
-})
+      path: "/restos",
+      name: "restos",
+      component: () => import("../views/RestoView.vue"),
+    },
+    {
+      path: "/restos/:id",
+      name: "restos-show",
+      component: () => import("../views/RestoDetailView.vue"),
+    },
+  ],
+});
 
 export default router

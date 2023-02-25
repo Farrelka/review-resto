@@ -42,7 +42,7 @@ const excerpt = (text, maxLenght = 10, indicator = "...") => {
         <!-- Card -->
         <BaseCard :to="{ name: 'restos-show', params: { id: resto.id } }">
           <template #title>{{ resto.name }}</template>
-          {{ excerpt(resto.description, 40) }}
+          {{ excerpt(resto.description, 40) }}  
         </BaseCard>
       </div>
     </div>

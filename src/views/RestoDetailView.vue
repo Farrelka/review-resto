@@ -28,8 +28,11 @@ onMounted(() => fetchDetail());
 
 <template>
     <BaseContainer>
-        <BaseCard>
-            Sedang menampilkan resto dengan ID: {{ route.params.id }}
+        <RouterLink :to="{ name: 'restos' }" 
+        class="inline-block p-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-800">Back</RouterLink>
+        <BaseCard class="mt-4">
+            <template #title>{{ detail.name }}</template>
         </BaseCard>
+        <BaseCard class="mt-4">{{ detail.description }}</BaseCard>
     </BaseContainer>
 </template>

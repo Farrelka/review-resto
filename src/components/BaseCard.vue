@@ -1,6 +1,6 @@
 <script setup>
-import { defineProps } from 'vue';
-import { RouterLink } from 'vue-router';
+import { defineProps } from "vue";
+import { RouterLink } from "vue-router";
 import BaseCardTitle from "@/components/BaseCardTitle.vue";
 import BaseCardBody from "@/components/BaseCardBody.vue";
 
